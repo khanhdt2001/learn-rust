@@ -3,7 +3,7 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-   
+    sample_string()
 }
 
 fn guess_game() {
@@ -70,4 +70,10 @@ fn loop_labels() {
         count += 1;
     }
     println!("End count = {count}");
+}
+
+fn sample_string() {
+    let mut s = String::from("hello");
+    s.push_str(", world!");
+    println!("{}", s);
 }
