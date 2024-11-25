@@ -3,7 +3,8 @@ use std::cmp::Ordering;
 use std::io;
 
 fn main() {
-    sample_string()
+    let word = &String::from("hello world");
+    println!("{}",first_word(word)) ;
 }
 
 fn guess_game() {
@@ -76,4 +77,16 @@ fn sample_string() {
     let mut s = String::from("hello");
     s.push_str(", world!");
     println!("{}", s);
+}
+
+fn first_word(s: &String) -> usize {
+    let bytes = s.as_bytes();
+
+    for (i, &item) in bytes.iter().enumerate() {
+        if item == b' ' {
+            return i;
+        }
+    }
+
+    s.len()
 }
